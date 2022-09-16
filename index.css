@@ -18,7 +18,7 @@ body{
 
 .outgrid{
     display: grid;
-    grid-template-columns: [left]20% [center]60% [right]20%;
+    grid-template-columns: [left]2fr [center]6fr [right]2fr;
 }
 
 .home ,.about, .services ,.partners ,.works ,.news{
@@ -143,7 +143,7 @@ Skipped Nav */
     letter-spacing: .3em;
 }
 
-.title p{
+.title p{ /*Reused*/
     font-family: 'Abril fatface', cursive;
     font-size: 3.5rem;
     font-weight: 600;
@@ -239,22 +239,102 @@ Skipped Nav */
     grid-template-rows: repeat(4 ,calc( 1.5rem + 3.5rem + (3.5rem* 1.34)*2 + 3.5rem*2 ));
 }
 
-.works-layout div:nth-child(1){
+.works-layout > div:nth-child(1){
+    grid-column: 2;
+    
+}
+
+.works-layout > div:nth-child(2){
+    grid-column: 3/span 2;
+    grid-row: 1/ span 2;
+}
+
+.works-layout > div:nth-child(3){
+    grid-column: 1/span 2;
+    grid-row: 2/span 2;
+}
+
+.works-layout > div:nth-child(4){
+    grid-column: 3/span 2;
+    grid-row: 3/span 2;
+}
+
+.works-layout > div:nth-child(5){
+    align-self: center;
+    grid-column: 2/ 3;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .1em;
+}
+
+.work-temp{
+    grid-auto-rows: 1fr 1fr;
+
+}
+
+.work-temp p:nth-child(1){
+    grid-column: 2/3;
+    font-size: 1.5rem;
+    margin-top: 1em;
+}
+
+.prj-tit{
+    grid-column: span 3;
+    align-self: end;
+}
+
+.prj-tit span:nth-child(n){
+    grid-column: 2;
+} 
+
+.prj-tit span:nth-child(1){
+    font-family: 'Abril fatface', cursive;
+    font-size: 4rem;
+}
+
+.prj-tit span:nth-child(2){
+    font-size: 1.5rem;
+}
+
+/*YYYYY*/
+
+.partners > div:nth-child(1){
     grid-column: 2;
 }
 
-.works-layout div:nth-child(2){
-    grid-column: 3/span 2;
+.partner-layout{
+    grid-column: 1/span 3;
+    display: grid;
 }
 
-.works-layout div:nth-child(3){
-    grid-column: 1/span 2;
+
+/*YYYY*/
+
+.news > div:nth-child(1){
+    grid-column: 2/span 1;
 }
 
-.works-layout div:nth-child(4){
-    grid-column: 3/span 2;
+.article-layout{
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1em;
 }
 
-.works-layout div:nth-child(5){
-    grid-column: 2/ 3;
+
+/*YYYYY*/
+
+.footer{
+    font-size: 3rem;
+}
+
+.footer > div:nth-child(1){
+    margin: 4em 0;
+}
+
+.footer > div:nth-child(2){
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
 }
