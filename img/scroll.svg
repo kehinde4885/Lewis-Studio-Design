@@ -1,0 +1,8 @@
+<svg viewBox="0 0 200 200">
+<path id="textPath" d="M 75,0 A 75,75 0 0 1 -75,0 A 75,75 0 0 1 75,0" transform="translate(100,100)" fill="none" stroke-width="0"></path>
+<g font-size="28px">
+<text text-anchor="start">
+<textPath xlink:href="#textPath" startOffset="0%">•&nbsp; scroll &nbsp;•&nbsp; scroll</textPath>
+</text>
+</g>
+</svg>

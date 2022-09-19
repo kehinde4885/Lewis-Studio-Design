@@ -14,8 +14,10 @@ html{
 /*Default Styles*/
 body{
     font-family: 'Karla',sans-serif;
-    background-color: #fff;
-    color: #000;
+    background-color: #2c1a6a;
+    color: #fff;
+    max-width: 95%;
+    margin: 0 auto;
 }
 
 .outgrid{
@@ -34,6 +36,8 @@ footer.outgrid div{
 section.ingrid{
     margin: 5em 0;
 }
+
+
 /*
 YYYY*/
 /*Grid Item 1*/
@@ -60,18 +64,23 @@ YYYY*/
     letter-spacing: 0.1em;
     color: transparent;
     background-image: linear-gradient(to bottom, #ff9000, #f00);
-    background-clip: text;
     clip-path: path("M 36.08 30.64 L 34.88 30.64 L 24.76 1 L 21.72 1 L 21.72 0 L 49.68 0 L 49.68 1 L 47.4 1 L 44.08 10.2 L 48.2 22.48 L 48.36 22.48 L 55.84 1 L 51.72 1 L 51.72 0 L 60.04 0 L 60.04 1 L 57.16 1 L 46.88 30.64 L 45.68 30.64 L 40.96 16.84 L 36.08 30.64 Z M 10.08 29.56 L 4.72 29.56 L 4.72 0 L 10.08 0 L 10.08 29.56 Z M 24.64 30.16 L 0 30.16 L 0 29.16 L 16.92 29.16 A 5.711 5.711 0 0 0 18.652 28.907 A 4.779 4.779 0 0 0 20.3 28 A 7.119 7.119 0 0 0 21.949 25.966 A 9.052 9.052 0 0 0 22.44 24.92 A 11.542 11.542 0 0 0 23.21 21.452 A 13.41 13.41 0 0 0 23.24 20.76 L 24.64 20.76 L 24.64 30.16 Z M 30.12 1 L 37.48 22.48 L 37.64 22.48 L 40.32 14.92 L 35.56 1 L 30.12 1 Z M 14.92 1 L 0 1 L 0 0 L 14.92 0 L 14.92 1 Z M 40.92 1 L 43.44 8.36 L 46 1 L 40.92 1 Z");
 }
 
 
+@-moz-document url-prefix() {
+    .logo h2{
+        background-clip: text;
+        clip-path: none;
+    }
+}
 .logo p{
     font-size: 1.5rem;
     font-weight: 600;
 }
 
 
-.menu{
+.menu-btn{
     font-size: 1.5rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -80,17 +89,92 @@ YYYY*/
     justify-content: space-between;
 }
 
+
+.menu{
+    position: absolute;
+    background-color: white;
+    color: #000;
+    height: 100vh;
+    right: 0;
+    font-size: 2rem;
+    display: none;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.menu > div:nth-of-type(1){
+    align-self: end;
+    margin-bottom: 3em;
+}
+
+.menu ul{
+    list-style: none;
+    font-size: 3rem;
+}
+
+
+.menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu li{
+    margin-bottom: 1em;
+}
+
+.menu > div:nth-of-type(2){
+    margin: auto 0 0;
+}
+
+.logos2{
+    display: flex;
+    width: 5em;
+    justify-content: space-between;
+    font-size: 3rem;
+}
+
+
+.menu > div:nth-of-type(2) > div:nth-of-type(2){
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-top: 1em;
+}
+
+
+
 /*Grid Item 2??*/
 .low{
-    height: auto;
+    grid-auto-rows: auto;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    max-height: max-content;
+    overflow: auto;
+    padding-top: 10em;
+    scrollbar-width: none;
+}
+
+.low::-webkit-scrollbar {
+    display: none;
+
 }
 
 /*Nav */
 .nav{
-    grid-row: 1;
-    position: sticky;
-    top: 0px;
+    grid-row: 1 / 8;
 }
+
+.nav ul{
+   position: sticky;
+   top: 0px;
+   font-size: 1.7rem;
+   text-transform: uppercase;
+   font-weight: 600;
+   opacity: .5;
+   list-style: none;
+   letter-spacing: .1em;
+}
+
 
 /*yYYYY*/
 
@@ -108,7 +192,7 @@ YYYY*/
     /* position: relative; */
     font-size: 2rem;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: .15em;
 }
 
@@ -125,12 +209,13 @@ YYYY*/
     line-height: 1;
     display: flex;
     flex-direction: column;
+    font-weight: 300;
 }
 
 
 .tit-box> h1{
     font-family: 'Abril Fatface', cursive;
-    font-size: 8rem;
+    font-size: 9rem;
     color: #ff9000;
     margin-bottom: 1em;
     
@@ -139,7 +224,7 @@ YYYY*/
 .tit-box > p{
     line-height: 1.5;
     opacity: 0.4;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 /*YYYY*/
@@ -163,9 +248,7 @@ YYYY*/
 
 
 /*YYYYY*/
-.services{
 
-}
 .services > .title{
     grid-column: 2;
 }
@@ -182,7 +265,6 @@ YYYY*/
     font-weight: 500;
     margin-top: 1em;
     margin-bottom: 2em;
-    color:;
 }
 
 .service-list{
@@ -205,6 +287,7 @@ YYYY*/
     font-size: 1.5rem;
     padding: 2em 1em;
     height: 20em;
+    background-color: #331D7F;
 }
 
 .service-box h3{
@@ -224,16 +307,18 @@ YYYY*/
     position: relative;
     width: 1.5em;
     height: .4em;
-    background-color: #000;
+    background-color: #fff;
+    opacity: 0.5;
 
 }
 
 .service-box div::after{
     content: "";
-    position: fixed;
+    position: absolute;
     width: 1.5em;
     height: .4em;
-    background-color: #000;
+    background-color: #fff;
+    opacity: .6;
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
@@ -273,7 +358,7 @@ YYYY*/
 
 .stats span:nth-of-type(2n-1){
     font-family: 'Abril fatface', cursive;
-    font-size: 4rem;
+    font-size: 7rem;
     margin-right: .5em;
 }
 
@@ -446,6 +531,7 @@ right: 20%;
 /*YYYYY*/
 
 .footer{
+    grid-column: span 3;
     font-size: 3rem;
     background-color: #2c1a6a;
     color: #fff;
