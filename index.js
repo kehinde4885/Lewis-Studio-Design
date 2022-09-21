@@ -1,18 +1,30 @@
-let open = document.querySelector('.header')
- 
+const open = document.querySelector('#open-btn')
 
-logout = function(){
-    console.log('here')
+const menu = document.querySelector('.menu')
+
+const menuItems = document.querySelector('.contain')
+
+const close = document.querySelector('#close-btn')
+
+
+openMenu = function(){
+    console.log('open')
+    menu.classList.add('show')
+    menuItems.classList.add('display')
 }
 
-let element = document.getElementById('news').addEventListener('click', logout)
 
-window.addEventListener('keydown', function(){
-    console.log("key")
-})
+closeMenu = function(){
+    menu.classList.remove('show')
+    menuItems.classList.remove('display')
+}
+// window.addEventListener('keydown', function(key){
+//     console.log(key)
+// })
 
-open.addEventListener('click', logout)
+open.addEventListener('click', openMenu)
 
-const close = document.querySelector('#close')
+close.addEventListener('click', closeMenu)
 
-logout()
+
+
